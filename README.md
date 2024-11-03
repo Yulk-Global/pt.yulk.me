@@ -1,7 +1,5 @@
 
-# README
-
-## Projeto: pt.yulk.me
+# pt.yulk.me
 
 Este projeto visa promover a colaboração e o compartilhamento de conhecimento dentro da comunidade, assegurando que todos os envolvidos tenham acesso equitativo às soluções desenvolvidas. A seguir, apresentamos os princípios fundamentais que orientam este projeto:
 
