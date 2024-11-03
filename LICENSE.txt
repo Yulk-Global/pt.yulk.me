@@ -112,3 +112,12 @@ de forma opcional. Essa abordagem garante que o trabalho coletivo seja reconheci
 todos os envolvidos na construção do conhecimento tenham seus esforços valorizados, ao
 mesmo tempo em que promove um ambiente de colaboração e respeito mútuo entre os membros
 da comunidade.
+
+
+Casos que não estão previstos nesta licença estarão sujeitos a análise por meio dos
+nossos canais oficiais de comunicação. Essa abordagem assegura que situações não
+contempladas nas diretrizes estabelecidas sejam avaliadas de forma adequada e
+transparente, permitindo que a comunidade possa expressar suas preocupações e obter
+orientações. Estamos comprometidos em oferecer suporte e esclarecimento, garantindo
+que todos os membros tenham um espaço para discutir e resolver questões que possam surgir,
+promovendo assim um ambiente colaborativo e responsivo às necessidades da comunidade.
