@@ -17,6 +17,6 @@ Este projeto visa promover a colaboração e o compartilhamento de conhecimento 
 
 ### Licença
 
-Este projeto está licenciado sob os princípios descritos no arquivo [LICENSE](LICENSE). Recomendamos que todos os colaboradores leiam e compreendam os termos da licença para garantir um uso adequado e colaborativo do conteúdo.
+Este projeto está licenciado sob os princípios descritos no arquivo [LICENSE.txt](LICENSE). Recomendamos que todos os colaboradores leiam e compreendam os termos da licença para garantir um uso adequado e colaborativo do conteúdo.
 
 Agradecemos por sua participação e contribuição para a construção de um ambiente de aprendizado e inovação! Se tiver dúvidas ou sugestões, não hesite em entrar em contato conosco através dos canais oficiais.
