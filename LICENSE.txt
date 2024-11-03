@@ -1,4 +1,4 @@
-Copyright (c) 2024 pt.yulk.me
+Copyright (c) 2024 Yulk
 
 
 Somos uma empresa dedicada a desenvolver soluções de qualidade na web.
