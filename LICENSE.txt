@@ -1,0 +1,114 @@
+Copyright (c) 2024 pt.yulk.me
+
+
+Somos uma empresa dedicada a desenvolver soluções de qualidade na web.
+Embora nosso foco não esteja exclusivamente nas demandas acadêmicas,
+elas representam um excelente exemplo prático de como nossas tecnologias
+podem ser aplicadas na melhoria da sociedade humana.
+
+
+Todos os nossos conteúdos são disponibilizados de forma gratuita. Sem custos
+diretos ao uso. Nosso compromisso é tornar o conhecimento acessível a todos,
+independentemente de condições financeiras, ampliando as oportunidades
+de acesso a tecnologia que produzimos.
+
+
+No exercício das nossas atividades, frequentemente nos deparamos com barreiras
+tecnológicas que limitam o alcance de nossos objetivos e o desenvolvimento de
+soluções inovadoras. Essas limitações, seja por conta de sistemas desatualizados,
+restrições de compatibilidade ou falta de recursos, nos desafiam a transcender
+o convencional. Precisamos ir além do que é estabelecido, buscar novas abordagens,
+adaptar ferramentas e, muitas vezes, até criar soluções inéditas.
+
+
+No campo das licenças digitais, encontramos um exemplo claro dessa limitação.
+A imposição de licenças e restrições de uso para softwares tem desestimulado pessoas
+e empresas a transformar o software em um bem público acessível. Esse modelo de licenciamento,
+que em muitos casos visa proteger a propriedade intelectual e garantir retornos financeiros,
+acaba por desencorajar a atividade econômica colaborativa e o desenvolvimento de soluções
+que poderiam beneficiar toda a sociedade. Ao impor barreiras de acesso e uso, as licenças
+digitais frequentemente desencorajam iniciativas que visam a transformação social e a inovação
+aberta, limitando o potencial coletivo de criação e compartilhamento de
+conhecimento tecnológico.
+
+
+Por outro lado, essa situação também reflete uma falta de senso de comunidade,
+que pode gerar um ambiente hostil em relação à propriedade privada no setor de tecnologia.
+A valorização do software livre e do acesso irrestrito a recursos digitais,
+embora benéfica em muitos aspectos, pode, em alguns casos, levar a uma desvalorização
+das contribuições de empresas e indivíduos que investem em inovações e buscam
+um retorno pelo seu trabalho. Esse conflito entre o ideal de um bem comum e a proteção
+da propriedade privada cria tensões que dificultam a construção de um ambiente equilibrado,
+onde tanto a colaboração quanto o reconhecimento do direito à propriedade possam coexistir
+de maneira harmoniosa e produtiva.
+
+
+O propósito desta licença que está sendo escrita é criar um ambiente harmonioso entre 
+o interesse privado e o interesse da comunidade. Ela busca, por meio de termos claros,
+equilibrar a proteção da propriedade intelectual com o acesso público, permitindo que
+criadores e empresas monetizem seus esforços inovadores sem perder a oportunidade de
+contribuir para o bem comum. Esse modelo de licença visa promover tanto a inovação e
+o crescimento econômico quanto o desenvolvimento de um ecossistema colaborativo,
+onde o compartilhamento de conhecimento possa ocorrer sem comprometer o valor
+e os direitos associados ao trabalho individual. Dessa forma, esta licença pretende
+alinhar interesses diversos, tornando o avanço tecnológico mais inclusivo
+e sustentável para todos.
+
+
+Agora que você conhece a qualidade, a pureza dos princípios e a boa fé que 
+fundamentam esta licença, é hora de explorar a materialidade dos direitos e
+deveres de cada parte envolvida. Esses direitos e obrigações foram cuidadosamente
+definidos para garantir um equilíbrio justo entre os interesses individuais e coletivos,
+assegurando que todos os envolvidos possam usufruir dos benefícios e responsabilidades
+de forma clara e transparente. Ao compreender essa estrutura, você terá uma visão 
+completa do compromisso mútuo que esta licença propõe, promovendo um ambiente de 
+respeito e colaboração para o avanço compartilhado.
+
+
+Todas as soloções elaboradas ou aprimoradas pela comunidade estarão disponíveis em
+nosso site e aplicativo sem qualquer custo direto, estando sujeitos apenas aos custos
+da plataforma, que são totalmente financiados por publicidade. Embora possamos
+oferecer planos opcionais para remover anúncios e aprimorar a experiência do usuário,
+asseguramos que, em nenhum momento, será imposta qualquer restrição ao acesso e à
+utilização desses conteúdos dentro de nossa plataforma. Esse compromisso garante que
+o conhecimento colaborativo estará sempre acessível a todos na internet, sem qualquer
+barreira ou limitação que impeça seu uso, mantendo nosso propósito de promover
+um ambiente inclusivo e acessível.
+
+
+O acesso gratuito às questões e funcionalidades da plataforma se estende exclusivamente
+a usuários pessoa física e ao uso normal, destinado ao consumo direto e pessoal do conteúdo.
+Esse uso gratuito não se aplica a bots ou a qualquer mecanismo automatizado que não promova
+o acesso direto e autêntico à nossa plataforma. Para garantir a sustentabilidade do serviço
+e a qualidade da experiência oferecida, o acesso por bots ou outras ferramentas de automação
+que não contribuem para o uso direto da plataforma está sujeito a restrições ou custos
+específicos, assegurando que os recursos da comunidade permaneçam acessíveis e disponíveis
+aos usuários legítimos.
+
+
+O registro de uma solução na plataforma indica que essa solução pertence à comunidade e,
+portanto, não pode ser utilizada por meios externos que não sejam os fornecidos pela própria plataforma.
+Essa medida garante que o conteúdo gerado e aprimorado pela comunidade permaneça protegido e acessível
+de forma exclusiva através dos canais oficiais, preservando o valor colaborativo das contribuições
+e mantendo a integridade do ambiente comunitário. Assim, promovemos uma experiência de acesso justa
+e segura, beneficiando todos os usuários e respeitando o propósito de um espaço coletivo
+de conhecimento.
+
+
+A comunidade como um todo tem a responsabilidade de salvaguardar os direitos autorais de
+terceiros presentes nas soluções que foram produzidas. Isso implica em um compromisso
+coletivo de respeitar e reconhecer as contribuições de autores e criadores, garantindo
+que suas obras não sejam utilizadas de forma inadequada ou sem a devida atribuição.
+Ao promover uma cultura de respeito pelos direitos autorais, a comunidade não apenas
+protege os interesses de seus membros, mas também fortalece a confiança e a colaboração
+entre todos os envolvidos, criando um ambiente que valoriza tanto a inovação quanto
+a ética no compartilhamento de conhecimento.
+
+
+Ao criar uma solução, esta passa a pertencer à comunidade, e qualquer remoção ou edição
+estará sujeita à moderação dos membros da mesma. É importante ressaltar que, mesmo após a
+contribuição, os créditos de quem colaborou devem ser respeitados, podendo ser citados
+de forma opcional. Essa abordagem garante que o trabalho coletivo seja reconhecido e que
+todos os envolvidos na construção do conhecimento tenham seus esforços valorizados, ao
+mesmo tempo em que promove um ambiente de colaboração e respeito mútuo entre os membros
+da comunidade.
