@@ -87,12 +87,12 @@ aos usuários legítimos.
 
 
 O registro de uma solução na plataforma indica que essa solução pertence à comunidade e,
-portanto, não pode ser utilizada por meios externos que não sejam os fornecidos pela própria plataforma.
-Essa medida garante que o conteúdo gerado e aprimorado pela comunidade permaneça protegido e acessível
-de forma exclusiva através dos canais oficiais, preservando o valor colaborativo das contribuições
-e mantendo a integridade do ambiente comunitário. Assim, promovemos uma experiência de acesso justa
-e segura, beneficiando todos os usuários e respeitando o propósito de um espaço coletivo
-de conhecimento.
+portanto, não pode ser utilizada por meios externos que não sejam os fornecidos pela
+própria plataforma. Essa medida garante que o conteúdo gerado e aprimorado pela comunidade
+permaneça protegido e acessível de forma exclusiva através dos canais oficiais, preservando
+o valor colaborativo das contribuições e mantendo a integridade do ambiente comunitário.
+Assim, promovemos uma experiência de acesso justa e segura, beneficiando todos os usuários
+e respeitando o propósito de um espaço coletivo de conhecimento.
 
 
 A comunidade como um todo tem a responsabilidade de salvaguardar os direitos autorais de
