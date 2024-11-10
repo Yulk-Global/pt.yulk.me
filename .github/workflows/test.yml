@@ -18,23 +18,13 @@ jobs:
         run: |
           git fetch origin +refs/pull/${{ github.event.pull_request.number }}/merge
 
-      - name: Find changed .yml files in solutions folder
-        id: find_files
+      - name: Send changed .yml files to test endpoint
+        id: send_changed_files
         run: |
           CHANGED_FILES=$(git diff --name-only FETCH_HEAD -- 'solutions/**/*.yml')
-          FILE_NAMES=""
-          for file in $CHANGED_FILES; do
-            FILE_NAMES+=$(basename "$file")$'\n'
-          done
-
-      - name: Send changed .yml files to endpoint and capture response
-        if: steps.find_files.outputs.CHANGED_FILES != ''
-        id: send_request
-        run: |
           RESPONSE=""
           TOKEN="${{ secrets.TEST_TOKEN }}"
 
-          CHANGED_FILES=$(cat changed_files.txt)
           for file in $CHANGED_FILES; do
             FILE_NAME=$(basename "$file")
             FILE_NAME_BASE64=$(echo -n "$FILE_NAME" | base64)
