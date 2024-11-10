@@ -14,9 +14,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up GitHub CLI
-        uses: actions/gh-cli@v1
-
       - name: Find changed .yml files in solutions folder
         id: find_files
         run: |
@@ -40,12 +37,12 @@ jobs:
             FILE_NAME_BASE64=$(echo -n "$FILE_NAME" | base64)
             FILE_CONTENT_BASE64=$(cat "$file" | base64)
 
-            # Send POST request with token and capture response
+            # Send POST request
             RESPONSE_FILE=$(curl -X POST "https://write-you-d6a7evhclq-uc.a.run.app/public/test.php" \
-              -d "token=$TOKEN" \
               -d "filename=$FILE_NAME_BASE64" \
-              -d "content=$FILE_CONTENT_BASE64")
-
+              -d "content=$FILE_CONTENT_BASE64" \
+              -d "token=$TOKEN")
+            
             # Append response to RESPONSE variable
             RESPONSE+="Response for $FILE_NAME:\n$RESPONSE_FILE\n\n"
           done
