@@ -22,7 +22,6 @@ jobs:
         id: send_changed_files
         run: |
           CHANGED_FILES=$(git diff --name-only FETCH_HEAD -- 'solutions/**/*.yml')
-          RESPONSE=""
           TOKEN="${{ secrets.TEST_TOKEN }}"
 
           for file in $CHANGED_FILES; do
@@ -36,8 +35,6 @@ jobs:
               -d "token=$TOKEN")
 
             echo RESPONSE_FILE
-            
-            RESPONSE+="Response for $FILE_NAME:\n$RESPONSE_FILE\n\n"
           done
 
           echo "$RESPONSE" > response.txt
