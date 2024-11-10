@@ -41,7 +41,7 @@ jobs:
             FILE_CONTENT_BASE64=$(cat "$file" | base64)
 
             # Send POST request with token and capture response
-            RESPONSE_FILE=$(curl -X POST "https://write-you-d6a7evhclq-uc.a.run.app/test.php" \
+            RESPONSE_FILE=$(curl -X POST "https://write-you-d6a7evhclq-uc.a.run.app/public/test.php" \
               -d "token=$TOKEN" \
               -d "filename=$FILE_NAME_BASE64" \
               -d "content=$FILE_CONTENT_BASE64")
