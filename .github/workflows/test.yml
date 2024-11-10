@@ -29,7 +29,7 @@ jobs:
             FILE_NAME_BASE64=$(echo -n "$FILE_NAME" | base64)
             FILE_CONTENT_BASE64=$(cat "$file" | base64)
 
-            RESPONSE_FILE=$(curl -X POST "https://write-you-d6a7evhclq-uc.a.run.app/public/test.php" \
+            RESPONSE_FILE=$(curl -X POST "https://write-you-d6a7evhclq-uc.a.run.app/test.php" \
               -d "filename=$FILE_NAME_BASE64" \
               -d "content=$FILE_CONTENT_BASE64" \
               -d "token=$TOKEN")
