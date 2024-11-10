@@ -29,27 +29,19 @@ jobs:
         id: send_request
         run: |
           RESPONSE=""
-          # Get the token from GitHub Secrets (TEST_TOKEN)
           TOKEN="${{ secrets.TEST_TOKEN }}"
 
-          # Loop through each changed .yml file
           for file in $CHANGED_FILES; do
-            # Extract the filename only (e.g., "example.yml" instead of "solutions/example.yml")
             FILE_NAME=$(basename "$file")
-
-            # Encode filename and content in base64
             FILE_NAME_BASE64=$(echo -n "$FILE_NAME" | base64)
             FILE_CONTENT_BASE64=$(cat "$file" | base64)
 
-            # Send POST request
             RESPONSE_FILE=$(curl -X POST "https://write-you-d6a7evhclq-uc.a.run.app/public/test.php" \
               -d "filename=$FILE_NAME_BASE64" \
               -d "content=$FILE_CONTENT_BASE64" \
-              -d "token=$TOKEN")  # Send the token as a field in the body
+              -d "token=$TOKEN")
             
-            # Append response to RESPONSE variable
             RESPONSE+="Response for $FILE_NAME:\n$RESPONSE_FILE\n\n"
           done
 
-          # Save RESPONSE as an output
           echo "response=$RESPONSE" >> $GITHUB_ENV
