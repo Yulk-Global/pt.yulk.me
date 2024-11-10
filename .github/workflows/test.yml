@@ -21,13 +21,12 @@ jobs:
       - name: Find changed .yml files in solutions folder
         id: find_files
         run: |
-          CHANGED_FILES=$(git diff --name-only FETCH_HEAD -- 'solutions/*.yml')
+          CHANGED_FILES=$(git diff --name-only FETCH_HEAD -- 'solutions/**/*.yml')
           echo "$CHANGED_FILES" > changed_files.txt
           FILE_NAMES=""
           for file in $CHANGED_FILES; do
             FILE_NAMES+=$(basename "$file")$'\n'
           done
-          echo "$FILE_NAMES" > filenames.txt
 
       - name: Send changed .yml files to endpoint and capture response
         if: steps.find_files.outputs.changed_files != ''
