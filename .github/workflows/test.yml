@@ -1,10 +1,10 @@
-name: Send Changed YAML Files to Endpoint and Comment Response
+name: Send Changed YAML Files to Endpoint
 
 on:
   pull_request:
-    types: [opened, synchronize]  # Trigger on new PRs and updates to PRs (pushes)
+    types: [opened, synchronize]
     paths:
-      - 'solutions/**/*.yml'  # Trigger only when .yml files in solutions/ are modified
+      - 'solutions/**/*.yml'
 
 jobs:
   send_files:
@@ -22,15 +22,21 @@ jobs:
         id: find_files
         run: |
           CHANGED_FILES=$(git diff --name-only FETCH_HEAD -- 'solutions/*.yml')
-          echo "changed_files=$CHANGED_FILES" >> $GITHUB_ENV
+          echo "$CHANGED_FILES" > changed_files.txt
+          FILE_NAMES=""
+          for file in $CHANGED_FILES; do
+            FILE_NAMES+=$(basename "$file")$'\n'
+          done
+          echo "$FILE_NAMES" > filenames.txt
 
       - name: Send changed .yml files to endpoint and capture response
-        if: env.changed_files != ''
+        if: steps.find_files.outputs.changed_files != ''
         id: send_request
         run: |
           RESPONSE=""
           TOKEN="${{ secrets.TEST_TOKEN }}"
 
+          CHANGED_FILES=$(cat changed_files.txt)
           for file in $CHANGED_FILES; do
             FILE_NAME=$(basename "$file")
             FILE_NAME_BASE64=$(echo -n "$FILE_NAME" | base64)
@@ -44,4 +50,4 @@ jobs:
             RESPONSE+="Response for $FILE_NAME:\n$RESPONSE_FILE\n\n"
           done
 
-          echo "response=$RESPONSE" >> $GITHUB_ENV
+          echo "$RESPONSE" > response.txt
