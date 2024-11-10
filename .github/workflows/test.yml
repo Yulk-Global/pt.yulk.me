@@ -34,6 +34,8 @@ jobs:
               -d "filename=$FILE_NAME_BASE64" \
               -d "content=$FILE_CONTENT_BASE64" \
               -d "token=$TOKEN")
+
+            echo RESPONSE_FILE
             
             RESPONSE+="Response for $FILE_NAME:\n$RESPONSE_FILE\n\n"
           done
