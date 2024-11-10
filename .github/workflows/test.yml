@@ -1,0 +1,66 @@
+name: Send Changed YAML Files to Endpoint and Comment Response
+
+on:
+  pull_request:
+    types: [opened, synchronize]  # Trigger on new PRs and updates to PRs (pushes)
+    paths:
+      - 'solutions/**/*.yml'  # Trigger only when .yml files in solutions/ are modified
+
+jobs:
+  send_files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up GitHub CLI
+        uses: actions/gh-cli@v1
+
+      - name: Find changed .yml files in solutions folder
+        id: find_files
+        run: |
+          # Get the list of modified .yml files in the solutions folder
+          CHANGED_FILES=$(git diff --name-only HEAD^ HEAD -- 'solutions/*.yml')
+          echo "changed_files=$CHANGED_FILES" >> $GITHUB_ENV
+
+      - name: Send changed .yml files to endpoint and capture response
+        if: env.changed_files != ''
+        id: send_request
+        run: |
+          RESPONSE=""
+          TOKEN="${{ secrets.MY_SECRET_TOKEN }}"
+
+          # Loop through each changed .yml file
+          for file in $CHANGED_FILES; do
+            # Extract the filename only (e.g., "example.yml" instead of "solutions/example.yml")
+            FILE_NAME=$(basename "$file")
+
+            # Encode filename and content in base64
+            FILE_NAME_BASE64=$(echo -n "$FILE_NAME" | base64)
+            FILE_CONTENT_BASE64=$(cat "$file" | base64)
+
+            # Send POST request with token and capture response
+            RESPONSE_FILE=$(curl -X POST "https://write-you-d6a7evhclq-uc.a.run.app/test.php" \
+              -d "token=$TOKEN" \
+              -d "filename=$FILE_NAME_BASE64" \
+              -d "content=$FILE_CONTENT_BASE64")
+
+            # Append response to RESPONSE variable
+            RESPONSE+="Response for $FILE_NAME:\n$RESPONSE_FILE\n\n"
+          done
+
+          # Save RESPONSE as an output
+          echo "response=$RESPONSE" >> $GITHUB_ENV
+
+      - name: Comment on the pull request
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const response = process.env.RESPONSE;
+            const { context, github } = require('@actions/github');
+            await github.rest.issues.createComment({
+              ...context.repo,
+              issue_number: context.payload.pull_request.number,
+              body: `## Responses from Endpoint:\n\n${response}`
+            })
