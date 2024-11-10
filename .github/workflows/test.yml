@@ -29,7 +29,7 @@ jobs:
         id: send_request
         run: |
           RESPONSE=""
-          TOKEN="${{ secrets.MY_SECRET_TOKEN }}"
+          TOKEN="${{ secrets.TEST_TOKEN }}"
 
           # Loop through each changed .yml file
           for file in $CHANGED_FILES; do
