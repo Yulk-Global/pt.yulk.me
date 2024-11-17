@@ -31,3 +31,5 @@ qual-e-a-raiz-quadrada-de-$0:
         (li)operador: √;(/li)
         (li)raiz: $result.(/li)
       (/ul)
+
+
