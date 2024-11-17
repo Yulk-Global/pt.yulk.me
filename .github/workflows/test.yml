@@ -23,7 +23,8 @@ jobs:
         env:
           TOKEN: ${{ secrets.TEST_TOKEN }}
         run: |
-          CHANGED_FILES=$(git diff --name-only FETCH_HEAD -- 'solutions/**/*.yml')
+          BASE_BRANCH=$(jq -r '.pull_request.base.ref' < $GITHUB_EVENT_PATH)
+          CHANGED_FILES=$(git diff --name-only origin/$BASE_BRANCH HEAD -- 'solutions/**/*.yml')
 
           if [ -z "$CHANGED_FILES" ]; then
             echo "No solutions .yml files found."
