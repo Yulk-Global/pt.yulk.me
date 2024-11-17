@@ -1,4 +1,4 @@
-name: Send Changed YAML Files to Endpoint
+name: Send Changed YAML Files to Test Endpoint
 
 on:
   pull_request:
@@ -20,21 +20,31 @@ jobs:
 
       - name: Send changed .yml files to test endpoint
         id: send_changed_files
+        env:
+          TOKEN: ${{ secrets.TEST_TOKEN }}
         run: |
           CHANGED_FILES=$(git diff --name-only FETCH_HEAD -- 'solutions/**/*.yml')
-          TOKEN="${{ secrets.TEST_TOKEN }}"
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No solutions .yml files found."
+            exit 0
+          fi
 
           for file in $CHANGED_FILES; do
             FILE_NAME=$(basename "$file")
             FILE_NAME_BASE64=$(echo -n "$FILE_NAME" | base64)
-            FILE_CONTENT_BASE64=$(cat "$file" | base64)
+            FILE_CONTENT_BASE64=$(base64 -w 0 "$file")
 
-            RESPONSE_FILE=$(curl -X POST "https://write-you-d6a7evhclq-uc.a.run.app/test.php" \
+            RESPONSE=$(curl -s -X POST "https://write-you-d6a7evhclq-uc.a.run.app/test.php" \
               -d "filename=$FILE_NAME_BASE64" \
               -d "content=$FILE_CONTENT_BASE64" \
               -d "token=$TOKEN")
 
-            echo RESPONSE_FILE
-          done
+            OK=$(echo "$RESPONSE" | jq -r '.ok')
+            if [ "$OK" == "false" ]; then
+              echo "API response indicated failure: $RESPONSE"
+              exit 1
+            fi
 
-          echo "$RESPONSE" > response.txt
+            echo "Response for $file: $RESPONSE"
+          done
