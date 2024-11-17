@@ -35,12 +35,18 @@ jobs:
           for file in $CHANGED_FILES; do
             FILE_NAME=$(basename "$file")
             FILE_NAME_BASE64=$(echo -n "$FILE_NAME" | base64)
-            FILE_CONTENT_BASE64=$(base64 -w 0 "$file")
+            FILE_CONTENT_BASE64=$(iconv -f $(file -bi "$file" | sed -e 's/.*charset=//') -t UTF-8 "$file" | base64)
+
+            echo "Filename: $FILE_NAME"
+            echo "Encoded filename: FILE_NAME_BASE64"
+            echo "Encoded content: $FILE_CONTENT_BASE64"
 
             RESPONSE=$(curl -s -X POST "https://write-you-d6a7evhclq-uc.a.run.app/test.php" \
-              -d "filename=$FILE_NAME_BASE64" \
-              -d "content=$FILE_CONTENT_BASE64" \
-              -d "token=$TOKEN")
+              -H "Content-Type: multipart/form-data; charset=UTF-8" \
+              -F "filename=$FILE_NAME_BASE64" \
+              -F "content=$FILE_CONTENT_BASE64" \
+              -F "token=$TOKEN"
+            )
 
             OK=$(echo "$RESPONSE" | jq -r '.ok')
             if [ "$OK" == "false" ]; then
