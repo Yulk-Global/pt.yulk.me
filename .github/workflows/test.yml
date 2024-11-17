@@ -24,6 +24,7 @@ jobs:
           TOKEN: ${{ secrets.TEST_TOKEN }}
         run: |
           BASE_BRANCH=$(jq -r '.pull_request.base.ref' < $GITHUB_EVENT_PATH)
+          git fetch origin $BASE_BRANCH
           CHANGED_FILES=$(git diff --name-only origin/$BASE_BRANCH HEAD -- 'solutions/**/*.yml')
 
           if [ -z "$CHANGED_FILES" ]; then
