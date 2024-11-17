@@ -42,10 +42,10 @@ jobs:
             echo "Encoded content: $FILE_CONTENT_BASE64"
 
             RESPONSE=$(curl -s -X POST "https://write-you-d6a7evhclq-uc.a.run.app/test.php" \
-              -H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" \
-              -d "filename=$FILE_NAME_BASE64" \
-              -d "content=$FILE_CONTENT_BASE64" \
-              -d "token=$TOKEN"
+              -H "Content-Type: multipart/form-data; charset=UTF-8" \
+              -F "filename=$FILE_NAME_BASE64" \
+              -F "content=$FILE_CONTENT_BASE64" \
+              -F "token=$TOKEN"
             )
 
             OK=$(echo "$RESPONSE" | jq -r '.ok')
