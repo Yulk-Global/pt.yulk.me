@@ -35,7 +35,8 @@ jobs:
           for file in $CHANGED_FILES; do
             FILE_NAME=$(basename "$file")
             FILE_NAME_BASE64=$(echo -n "$FILE_NAME" | base64)
-            FILE_CONTENT_BASE64=$(cat "$file" | base64)
+            FILE_CONTENT_UTF8=$(iconv -f $(file -bi "$file" | sed -e 's/.*charset=//') -t UTF-8 "$file")
+            FILE_CONTENT_BASE64=$(echo "$FILE_CONTENT_UTF8" | base64)
 
             RESPONSE=$(curl -s -X POST "https://write-you-d6a7evhclq-uc.a.run.app/test.php" \
               -d "filename=$FILE_NAME_BASE64" \
